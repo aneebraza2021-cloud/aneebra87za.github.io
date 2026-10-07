@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aneeb Raza | Educator & Technology Professional</title>
+
+  <meta name="description"
+        content="Official portfolio of Aneeb Raza — Computer Science Educator, School Principal and Technology Professional.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --navy: #0b1f3a;
+      --navy-light: #163b67;
+      --blue: #2563eb;
+      --light: #f5f8fc;
+      --white: #ffffff;
+      --text: #243447;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      padding: 150px 25px 80px;
+      background:
+        linear-gradient(135deg, #ffffff 0%, #f5f8fc 65%, #eaf1fa 100%);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-container {
+      max-width: 1150px;
+      margin: auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .small-title {
+      color: var(--blue);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 6vw, 75px);
+      line-height: 1.05;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      color: var(--navy-light);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 25px;
+      border-radius: 7px;
+      font-weight: 700;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--navy);
+      color: var(--navy);
+    }
+
+    .btn-outline:hover {
+      background: var(--navy);
+      color: white;
+    }
+
+    /* PROFILE CARD */
+
+    .profile-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 50px rgba(11,31,58,0.10);
+      text-align: center;
+    }
+
+    .profile-placeholder {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      margin: 0 auto 25px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 60px;
+      font-weight: 800;
+    }
+
+    .profile-card h3 {
+      color: var(--navy);
+      font-size: 23px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 25px;
+    }
+
+    .section-container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-heading {
+      margin-bottom: 50px;
+    }
+
+    .section-heading small {
+      color: var(--blue);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: 38px;
+      margin-top: 7px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 650px;
+      margin-top: 10px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      color: var(--muted);
+    }
+
+    .info-box {
+      background: var(--light);
+      border-left: 4px solid var(--blue);
+      padding: 25px;
+      border-radius: 8px;
+    }
+
+    .info-box strong {
+      color: var(--navy);
+    }
+
+    /* EXPERIENCE */
+
+    .experience {
+      background: var(--light);
+    }
+
+    .timeline {
+      border-left: 3px solid var(--blue);
+      padding-left: 30px;
+    }
+
+    .timeline-item {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      width: 13px;
+      height: 13px;
+      background: var(--blue);
+      border-radius: 50%;
+      position: absolute;
+      left: -38px;
+      top: 30px;
+      border: 3px solid white;
+    }
+
+    .timeline-item h3 {
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+
+    .timeline-item .date {
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: white;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(11,31,58,0.08);
+    }
+
+    .skill h3 {
+      color: var(--navy);
+      margin-bottom: 7px;
+    }
+
+    .skill p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      background: var(--light);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(11,31,58,0.08);
+    }
+
+    .project-number {
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .project h3 {
+      color: var(--navy);
+      margin: 10px 0;
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* EDUCATION */
+
+    .education-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .education-card h3 {
+      color: var(--navy);
+    }
+
+    .education-card p {
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: var(--navy);
+      color: white;
+    }
+
+    .contact .section-heading h2,
+    .contact .section-heading p {
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info p {
+      margin: 15px 0;
+      color: #d7e0ec;
+    }
+
+    .contact-info strong {
+      color: white;
+    }
+
+    .contact-box {
+      background: white;
+      color: var(--text);
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .contact-box h3 {
+      color: var(--navy);
+      margin-bottom: 15px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #07162a;
+      color: #aebccd;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-container,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .profile-card {
+        max-width: 400px;
+        margin: auto;
+      }
+
+      .skills-grid,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading h2 {
+        font-size: 30px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+  <div class="nav-container">
+
+    <div class="logo">
+      Aneeb<span>Raza.</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-container">
+
+    <div>
+
+      <div class="small-title">
+        Welcome to my portfolio
+      </div>
+
+      <h1>
+        Aneeb <span>Raza</span>
+      </h1>
+
+      <h2>
+        Computer Science Educator · School Principal · Technology Professional
+      </h2>
+
+      <p>
+        I am an education and technology professional passionate about
+        Computer Science, modern teaching, educational leadership and
+        creating better learning environments through technology.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#about" class="btn btn-primary">
+          Explore My Profile
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+          Contact Me
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="profile-card">
+
+      <!-- YOUR PHOTO WILL GO HERE LATER -->
+
+      <div class="profile-placeholder">
+        AR
+      </div>
+
+      <h3>Aneeb Raza</h3>
+
+      <p>
+        Educator & Technology Professional
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+  <div class="section-container">
+
+    <div class="section-heading">
+
+      <small>About Me</small>
+
+      <h2>Building Education Through Technology</h2>
+
+      <p>
+        A professional profile combining education, leadership,
+        teaching and technology.
+      </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+      <div class="about-text">
+
+        <p>
+          I am a Computer Science educator and educational leader
+          with a strong interest in technology, digital learning and
+          professional development.
+        </p>
+
+        <p>
+          My experience includes teaching Computer Science,
+          developing educational resources, supporting teachers,
+          conducting training sessions and contributing to
+          effective school management.
+        </p>
+
+        <p>
+          I believe technology should not replace good teaching.
+          Instead, it should make teaching more effective,
+          organized and engaging.
+        </p>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <p>
+          <strong>Professional Focus</strong>
+        </p>
+
+        <p>
+          Computer Science Education
+        </p>
+
+        <p>
+          Educational Leadership
+        </p>
+
+        <p>
+          ICT & Digital Learning
+        </p>
+
+        <p>
+          Teacher Training
+        </p>
+
+        <p>
+          Web & Technology Projects
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="experience" id="experience">
+
+  <div class="section-container">
+
+    <div class="section-heading">
+
+      <small>Professional Journey</small>
+
+      <h2>Experience</h2>
+
+      <p>
+        My professional journey across education, leadership
+        and technology.
+      </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+
+        <div class="date">Current Role</div>
+
+        <h3>School Principal</h3>
+
+        <p>
+          Leading academic and administrative activities,
+          supporting teachers, maintaining discipline,
+          improving school systems and creating a better
+          learning environment for students.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="date">Education & Teaching</div>
+
+        <h3>Computer Science Educator</h3>
+
+        <p>
+          Teaching Computer Science and supporting students
+          with conceptual learning, programming, ICT and
+          examination preparation.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="date">Professional Development</div>
+
+        <h3>Teacher Training & Academic Development</h3>
+
+        <p>
+          Planning training activities, lesson planning support,
+          professional development and technology-based
+          learning initiatives.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+  <div class="section-container">
+
+    <div class="section-heading">
+
+      <small>What I Do</small>
+
+      <h2>Professional Skills</h2>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+      <div class="skill">
+        <h3>Computer Science</h3>
+        <p>
+          Computer Science concepts, programming and
+          examination-focused teaching.
+        </p>
+      </div>
+
+      <div class="skill">
+        <h3>Web Development</h3>
+        <p>
+          HTML, CSS, JavaScript and modern web technologies.
+        </p>
+      </div>
+
+      <div class="skill">
+        <h3>Educational Leadership</h3>
+        <p>
+          Academic planning, school systems, discipline and
+          staff coordination.
+        </p>
+      </div>
+
+      <div class="skill">
+        <h3>ICT & Digital Learning</h3>
+        <p>
+          Using technology to improve classroom learning and
+          educational processes.
+        </p>
+      </div>
+
+      <div class="skill">
+        <h3>Teacher Training</h3>
+        <p>
+          Professional development, lesson planning and
+          practical training.
+        </p>
+      </div>
+
+      <div class="skill">
+        <h3>Microsoft Office</h3>
+        <p>
+          Word, PowerPoint, Excel and productivity workflows.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+
+  <div class="section-container">
+
+    <div class="section-heading">
+
+      <small>My Work</small>
+
+      <h2>Projects & Initiatives</h2>
+
+      <p>
+        A selection of educational and technology projects.
+      </p>
+
+    </div>
+
+
+    <div class="project-grid">
+
+      <div class="project">
+
+        <div class="project-number">01</div>
+
+        <h3>Personal Portfolio</h3>
+
+        <p>
+          A modern responsive portfolio website developed
+          using HTML, CSS and GitHub Pages.
+        </p>
+
+      </div>
+
+
+      <div class="project">
+
+        <div class="project-number">02</div>
+
+        <h3>Digital Education</h3>
+
+        <p>
+          Technology-based learning resources and digital
+          solutions designed to support students and teachers.
+        </p>
+
+      </div>
+
+
+      <div class="project">
+
+        <div class="project-number">03</div>
+
+        <h3>Teacher Development</h3>
+
+        <p>
+          Training and academic development initiatives focused
+          on improving classroom teaching practices.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+  <div class="section-container">
+
+    <div class="section-heading">
+
+      <small>Academic Background</small>
+
+      <h2>Education</h2>
+
+    </div>
+
+
+    <div class="education-card">
+
+      <h3>Associate Degree in Computer Science</h3>
+
+      <p>
+        Computer Science education with a focus on technology,
+        programming and computing concepts.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <div class="section-container">
+
+    <div class="section-heading">
+
+      <small>Get In Touch</small>
+
+      <h2>Let's Connect</h2>
+
+      <p>
+        For professional opportunities, teaching,
+        technology projects or collaboration.
+      </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+      <div class="contact-info">
+
+        <p>
+          <strong>Name:</strong><br>
+          Aneeb Raza
+        </p>
+
+        <p>
+          <strong>Email:</strong><br>
+          aneebtech1@gmail.com
+        </p>
+
+        <p>
+          <strong>Profession:</strong><br>
+          Educator · School Principal · Technology Professional
+        </p>
+
+      </div>
+
+
+      <div class="contact-box">
+
+        <h3>Professional Profile</h3>
+
+        <p>
+          Interested in education, Computer Science,
+          technology, digital learning and professional
+          collaboration.
+        </p>
+
+        <br>
+
+        <a href="mailto:aneebtech1@gmail.com"
+           class="btn btn-primary">
+          Email Me
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  © 2026 Aneeb Raza. All Rights Reserved.
+
+</footer>
+
+
+</body>
+</html>
